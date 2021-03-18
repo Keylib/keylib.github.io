@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <head>
@@ -9,15 +8,52 @@
 		
 <link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.5/css/tachyons.min.css">
 		
-<title>Assignment Calculator</title>
+
+
+<style>
+.collapsible {
+  background-color: #f2f2f2;
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  outline: 5px solid;
+  outline-color: white;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #00008B;
+  color: #F0F0F0;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+ul {
+	list-style-image: url(checkbox.jpg);
+}
+li {
+  margin: 5px;
+}
+</style>
+</head>
+
 <style>
 * {font-family: Arial, Verdana, Helvetica, Calibri, Tahoma, sans-serif; }
 strong {font-size: 25pt; color: #f0f0f0;}
-th {text-align: left; background-color: #311B92;}
+th {text-align: left; background-color: #00008B;}
 body {max-width: 800px; margin: auto;}
 .footer {font-size: 8pt;}
 .err {
-	color: blue;
+	color: red;
 }
 .label {
 	font-size: 14pt;
@@ -26,9 +62,8 @@ body {max-width: 800px; margin: auto;}
 	vertical-align: top;
 }
 </style>
-</head>  
 
-    <body>
+ <body>
 <main id="app" class="ph0 mh0 measure-wide f4 lh-copy center">
 
 <a href="/" tabindex="1" title="Keyano College home page"><img src="https://www.keyano.ca/en/images/structure/logo.svg" border="0" alt="Keyano College"/></a>
@@ -36,7 +71,6 @@ body {max-width: 800px; margin: auto;}
 <tr><td>
 This calculator will help you break down your assignment or project into manageable steps and guide you to useful services and tools from the Keyano Library.  
 </td></tr>
-
 
 <table align="center" border="0">
 <tr>
@@ -134,32 +168,23 @@ function showMe()
 
 
 <div id="show_table">
-<table border="1">
-	<tbody>
-		<tr>
-			<td width="100">Step One</td>
-			<td width="150">
-			<div id="stepDay1">&nbsp;</div>
-			</td>
-			<td width="400">Understand Your Assignment
-			<ul>
+
+
+
+<p> <br><table cellpadding='4' width='100%'><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 1 <div id="stepDay1"></div>Understand Your Assignment</button></tr><div class="content"><ul style ="&#9633;"> 
+<ul>
 				<li>Read your assignment carefully before you start to ensure you understand the instructions.</li>
 				<li>Highlight any specific deadlines for submitting your topic, sources, outlines, or drafts.</li>
 				<li>Understand the citation style your instructor requires.
 				<ul>
-					<li>Consider the<a href="https://www.keyano.ca/en/student-services/research-help.aspx">Library's Research Guide</a> for more information.</li>
+					<li>Consider the using the <a href="https://www.keyano.ca/en/student-services/research-help.aspx">Library's Research Guide</a> for more information.</li>
 				</ul>
 				</li>
 				<li>Ask your instructor if you have questions in these areas.</li>
 			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Two</td>
-			<td>
-			<div id="stepDay2">&nbsp;</div>
-			</td>
-			<td>Choosing Your Topic
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 2 - <div id="stepDay2">&nbsp;</div>: Choosing Your Topic</button></tr><div class="content"><ul style ="&#9633;"> 
+Choosing Your Topic
 			<ul>
 				<li>View&nbsp;&quot;<a href="https://www.keyano.ca/en/student-services/resources/Documents/library/How-to-begin-research-handout---Current.pdf">How to Begin Research</a>&quot;</li>
 				<li>Write down your research question or topic.</li>
@@ -167,34 +192,17 @@ function showMe()
 				<li>Identify the main ideas presented. These are your Key Concepts or Keywords.</li>
 				<li>Use the &nbsp;&quot;<a href="https://keyano.beta.libguides.com/?b=g&d=a">Library subject guides</a>&quot; as a starting point for beginning your research project.</li>
 			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Three</td>
-			<td>
-			<div id="stepDay3">&nbsp;</div>
-			</td>
-			<td>Investigate Your Topic
-			<ul>
-				<li>Review your topic and ask more specific questions to define your research.</li>
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 3 -  <div id="stepDay3">&nbsp;</div>Investigate Your Topic</button></tr><div class="content"><ul style ="&#9633;"> 
+<li>Review your topic and ask more specific questions to define your research.</li>
 				<li>View&nbsp;&quot;<a href="https://www.keyano.ca/en/student-services/resources/Documents/library/Tips-on-Creating-a-Search-Strategy---Current.pdf">Tips for Creating a Search Strategyh</a>&quot;</li>
 				<li>Are you on track?
 				<ul style="list-style-type:circle">
 					<li>Get in touch with your instructor or the <a href="https://www.keyano.ca/en/student-services/academic-success-centre-formerly-the-skill-centre.aspx">Academic Success Centre</a> to discuss the direction of your paper.</li>
 					<li>Or contact the Library for assignment help by clicking the <a title="Email the Library" href="mailto:askthelibrary@keyano.ca" target="_blank">Ask the Library.</a>link</li>
-				</ul>
-				</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Four</td>
-			<td>
-			<div id="stepDay4">&nbsp;</div>
-			</td>
-			<td>Find Information on Your Topic
-			<ul>
-				<li>Head over to the Library website &quot;<a href="https://www.keyano.ca/en/student-services/library.aspx">to search the library catalogues</a>&quot;</li>
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 4 - <div id="stepDay4">&nbsp;</div> Find Information on Your Topic</button></tr><div class="content"><ul style ="&#9633;"> 
+<li>Head over to the Library website &quot;<a href="https://www.keyano.ca/en/student-services/library.aspx">to search the library catalogues</a>&quot;</li>
 				<li>Plan your search strategy.
 				<ul style="list-style-type:circle">
 					<li><a href="https://www.keyano.ca/en/student-services/research-help.aspx" target="_blank">Research Help </a>is a great place to begin&nbsp;</li>	
@@ -206,19 +214,10 @@ function showMe()
 				<ul style="list-style-type:circle">
 					<li>Get in touch with your instructor or the <a href="https://www.keyano.ca/en/student-services/academic-success-centre-formerly-the-skill-centre.aspx">Academic Success Centre</a> to discuss the direction of your paper.</li>
 					<li>Or contact the Library for assignment help by clicking the <a title="Email the Library" href="mailto:askthelibrary@keyano.ca" target="_blank">Ask the Library.</a>link</li>
-					</ul>
-				</li>
-			</ul>
-			</td>
-	</tr></P>
-		<tr>
-			<td>Step Five</td>
-			<td>
-			<div id="stepDay5">&nbsp;</div>
-			</td>
-			<td>Read and Evaluate Information
-			<ul>
-				<li>Keep track of your sources and record the citation information as you go. You will need this information to complete your bibliography, reference or works cited page.</li>
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 5 -  
+<div id="stepDay5">&nbsp;</div>	Read and Evaluate Information. </button></tr><div class="content"><ul style ="&#9633;"> 
+<li>Keep track of your sources and record the citation information as you go. You will need this information to complete your bibliography, reference or works cited page.</li> <p>
 				<li>Evaluate the gathered information for your research use this <a href="https://www.keyano.ca/en/student-services/resources/Documents/library/Evaluating-Online-Resources---CRAAP-handout.pdf">guide</a></li>
 					
 				<ul style="list-style-type:circle">
@@ -231,129 +230,81 @@ function showMe()
 				<ul style="list-style-type:circle">
 					<li>Get in touch with your instructor or the <a href="https://www.keyano.ca/en/student-services/academic-success-centre-formerly-the-skill-centre.aspx">Academic Success Centre</a> to discuss the direction of your paper.</li>
 					<li>Or contact the Library for assignment help by clicking the <a title="Email the Library" href="mailto:askthelibrary@keyano.ca" target="_blank">Ask the Library.</a>link</li>
-				</ul>
-				</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Six</td>
-			<td>
-			<div id="stepDay6">&nbsp;</div>
-			</td>
-			<td>Create Your Outline
-			<ul>
-				<li>Organize your ideas.</li>
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 6 - <div id="stepDay6">&nbsp;</div> : Create Your Outline</button></tr><div class="content"><ul style ="&#9633;"> 
+<li>Determine <li>Organize your ideas.</li>
 				<li>Organize your notes.</li>
 				<li>Outline the format of your paper.</li>
 				<li>Seek assistance with the writing process from the <a href="https://www.keyano.ca/en/student-services/academic-success-centre-formerly-the-skill-centre.aspx">Academic Success Centre</a></li>
 					<li>Or contact the Library for assignment help by clicking the <a title="Email the Library" href="mailto:askthelibrary@keyano.ca" target="_blank">Ask the Library.</a>link</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Seven</td>
-			<td>
-			<div id="stepDay7">&nbsp;</div>
-			</td>
-			<td>Write the First Draft</td>
-		</tr>
-		<tr>
-			<td>Step Eight</td>
-			<td>
-			<div id="stepDay8">&nbsp;</div>
-			</td>
-			<td>Maybe you need to do some additional Research?
-			<ul>
-				<li>Reread your assignment.</li>
-				<li>Use <a href=https://www.keyano.ca/en/student-services/resources/Images/library/Tutorial-Videos/Access-cc.mp4" target="_blank">How to Access Library Resources (video)</a> </li>
-				<li>View &quot;<a href="https://youtu.be/UsFcU1PH_8E" target="_blank">How to Avoid Plagiarism</a>&quot;</li>
-				<li>Keep looking for more information that support your research topic.</li>
-				<li>Are you on track?
-				<ul style="list-style-type:circle">
-					<li>Get in touch with your instructor or the <a href="https://www.keyano.ca/en/student-services/academic-success-centre-formerly-the-skill-centre.aspx">Academic Success Centre</a> to discuss the direction of your paper.</li>
-					<li>Or contact the Library for assignment help by clicking the <a title="Email the Library" href="mailto:askthelibrary@keyano.ca" target="_blank">Ask the Library.</a>link</li>
-				</ul>
-				</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Nine</td>
-			<td>
-			<div id="stepDay9">&nbsp;</div>
-			</td>
-			<td>Revise and Rewrite: Second Draft
-			<ul style="list-style-type:circle">
-				<li>Complete bibliography, reference, or works cited page.</li>
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 7 -  <div id="stepDay7">&nbsp;</div> Start your first draft</button></tr><div class="content"><ul style ="&#9633;"> 
+<li> Write your first draft.</li>
+<li><a target='_blank' rel='noopener noreferrer' href='https://library.senecacollege.ca/ld.php?content_id=35403694'>Develop an outline</a> of your essay.</li>
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 8 - <div id="stepDay8">&nbsp;</div>: Maybe you need to do some additional Research?</button></tr><div class="content"><ul style ="&#9633;"> 
+<li>Reread your assignment.</li>
+<li>Use this video on <a href=https://www.keyano.ca/en/student-services/resources/" target="_blank"> How to Access Library Resources</a></li>
+<li>View &quot;<a href="https://youtu.be/UsFcU1PH_8E" target="_blank">How to Avoid Plagiarism</a>&quot;</li>
+<li>Keep looking for more information that support your research topic.</li>
+<li>Are you on track?
+<ul style="list-style-type:circle">
+<li>Get in touch with your instructor or the <a href="https://www.keyano.ca/en/student-services/academic-success-centre-formerly-the-skill-centre.aspx">Academic Success Centre</a> to discuss the direction of your paper.</li>
+<li>Or contact the Library for assignment help by clicking the <a title="Email the Library" href="mailto:askthelibrary@keyano.ca" target="_blank">Ask the Library.</a></li>             
+</ul><br/></td></tr>
+
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 9 - <div id="stepDay9">&nbsp;</div> Revise and Rewrite: Second Draft</button></tr><div class="content"><ul style ="&#9633;"> 
+<li>Complete bibliography, reference, or works cited page.</li>
 				<li>View the Library's &nbsp;<a href="https://www.keyano.ca/en/student-services/research-help.aspx" target="_blank">&quot;Citation Guides&quot;</a>.</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Ten</td>
-			<td>
-			<div id="stepDay10">&nbsp;</div>
-			</td>
-			<td>Proofread Your Paper
-			<ul style="list-style-type:circle">
+</ul><br/></td></tr>
+
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 10 - <div id="stepDay10">&nbsp;</div> Edit and Proofread Your Paper</button></tr><div class="content"><ul style ="&#9633;"> 
+<ul style="list-style-type:circle">
 				<li>Look for spelling and grammatical errors.</li>
 				<li>Use the&nbsp;<a href="https://plagiarismcheckerx.com/" target="_blank">Plagiarism Checker</a>.</li>
 				<li>Read your paper out loud.&nbsp;</li>
 				<li>Does your paper check all of the assignment requirements?</li>
 				<li>Final review.</li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Eleven</td>
-			<td>
-			<div id="stepDay11">&nbsp;</div>
-			</td>
-			<td>Final Draft
-			<ul style="list-style-type:circle">
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 11 - <div id="stepDay11">&nbsp;</div> Final Draft</button></tr><div class="content"><ul style ="&#9633;"> 
+<ul style="list-style-type:circle">
 				<li>Write the final draft of your paper.</li>
 					<li>Login using your Keyano email and save a copy in your <a href="https://onedrive.live.com/" target="_blank">OneDrive.</a></li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>Step Twelve</td>
-			<td>
-			<div id="stepDay12">&nbsp;</div>
-			</td>
-			<td>Assignment Due Date
-			<ul style="list-style-type:circle">
-				<li>Hand in your assignment!</li>
-			</ul>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<li>View this LinkedIn Learning video for help with <a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/learning/word-quick-tips/welcome?u=2169170'>Microsoft Word Quick Tips</a>(to view, log into using Keyano College email).</li>
+<li>Are you on track?
+				<ul style="list-style-type:circle">
+					<li>Get in touch with your instructor or the <a href="https://www.keyano.ca/en/student-services/academic-success-centre-formerly-the-skill-centre.aspx">Academic Success Centre</a> to discuss the direction of your paper.</li>
+					<li>Or contact the Library for assignment help by clicking the <a title="Email the Library" href="mailto:askthelibrary@keyano.ca" target="_blank">Ask the Library.</a>link</li>
+</ul><br/></td></tr>
+</div><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> Step 12 - <div id="stepDay12">&nbsp;</div> Assignment Due Date</button></tr><div class="content"><ul style ="&#9633;"> 
+<li>Hand in your assignment!</li>
+<li>Congratulations! You're done!</li>
+</ul><br/></td></tr>
 </div>
-
-		   </div>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-							</div>
-        </div>
-    </div>
-				
-</div>
-				<div class="row s-lg-row">
-    <div id="s-lg-col-127" class="col-md-12">
-        <div class="s-lg-col-boxes">
-        </div>
-    </div>
-				
-</div>    
+</div></table>
 
 
 
-<p align='right'>
+	<script>
+		//added script to click on collapse text
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+	
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+		this.classList.toggle("active");
+		var content = this.nextElementSibling;
+		if (content.style.display === "block") {
+		  content.style.display = "none";
+		} else {
+		  content.style.display = "block";
+		}
+	  });
+	}
+	</script>
+    
+    
+    <p align='right'>
 <a href="https://www.keyano.ca/en/student-services/library.aspx"><img border=0 src="https://www.keyano.ca/en/resourcesGeneral/logos/logo-library.png" alt="Brought to you by Keyano College Library" /></a><br />
 </p>
 <center>
@@ -362,4 +313,5 @@ function showMe()
 Based on the <a href="https://www.lib.umn.edu/help/calculator/">Assignment Calculator</a> from the <a href="https://www.lib.umn.edu">University of Minnesota Libraries</a>.
 
 
-
+</body>
+</html>	
