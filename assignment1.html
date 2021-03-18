@@ -23,11 +23,14 @@
   outline: 5px solid;
   outline-color: white;
   font-size: 15px;
+
+
 }
 
 .active, .collapsible:hover {
   background-color: #00008B;
   color: #F0F0F0;
+
 }
 
 .content {
@@ -35,7 +38,7 @@
   display: none;
   overflow: hidden;
   background-color: #ffffff;
-}
+
 
 ul {
 	list-style-image: url(checkbox.jpg);
@@ -43,6 +46,7 @@ ul {
 li {
   margin: 5px;
 }
+
 </style>
 </head>
 
@@ -50,7 +54,7 @@ li {
 * {font-family: Arial, Verdana, Helvetica, Calibri, Tahoma, sans-serif; }
 strong {font-size: 25pt; color: #f0f0f0;}
 th {text-align: left; background-color: #00008B;}
-body {max-width: 800px; margin: auto;}
+body {max-width: 900px; margin: auto;}
 .footer {font-size: 8pt;}
 .err {
 	color: red;
@@ -60,6 +64,7 @@ body {max-width: 800px; margin: auto;}
 	font-weight: bold;
 	text-align: right;
 	vertical-align: top;
+    
 }
 </style>
 
@@ -69,7 +74,7 @@ body {max-width: 800px; margin: auto;}
 <a href="/" tabindex="1" title="Keyano College home page"><img src="https://www.keyano.ca/en/images/structure/logo.svg" border="0" alt="Keyano College"/></a>
 <table border="0" width="100%"><tr><th style="font-size:40pt; font-weight:bold; text-align:center; color:#F0F0F0">Assignment Calculator</th></tr>
 <tr><td>
-This calculator will help you break down your assignment or project into manageable steps and guide you to useful services and tools from the Keyano Library. Your plan will show below. 
+This calculator will help you break down your assignment or project into manageable steps and guide you to useful services and tools from the Keyano Library.  
 </td></tr>
 
 <table align="center" border="0">
@@ -165,9 +170,16 @@ function showMe()
 
   <br /><br />
 
+  <p align='right'>
+<a href="https://www.keyano.ca/en/student-services/library.aspx"><img border=0 src="https://www.keyano.ca/en/resourcesGeneral/logos/logo-library.png" alt="Brought to you by Keyano College Library" /></a><br />
+</p>
+<center>
+<hr noshade>
+<p class="footer">
+Based on the <a href="https://www.lib.umn.edu/help/calculator/">Assignment Calculator</a> from the <a href="https://www.lib.umn.edu">University of Minnesota Libraries</a>.
 
-<div style="position: static;" id="show_table"> 
 
+<div style="position: absolute;" id="show_table"> 
 
 <p> <br><table cellpadding='4' width='100%'><tr><button type="button" class="collapsible"><h4><img src="checkbox.jpg" width=15 height=15 alt="" border="0"> <div id="stepDay1"></div> Step 1 - Understand Your Assignment</button></tr><div class="content"><ul style ="&#9633;"> 
 <ul>
@@ -302,14 +314,6 @@ Choosing Your Topic
 	</script>
     
     
-    <p align='right'>
-<a href="https://www.keyano.ca/en/student-services/library.aspx"><img border=0 src="https://www.keyano.ca/en/resourcesGeneral/logos/logo-library.png" alt="Brought to you by Keyano College Library" /></a><br />
-</p>
-<center>
-<hr noshade>
-<p class="footer">
-Based on the <a href="https://www.lib.umn.edu/help/calculator/">Assignment Calculator</a> from the <a href="https://www.lib.umn.edu">University of Minnesota Libraries</a>.
-
-
+  
 </body>
 </html>	
