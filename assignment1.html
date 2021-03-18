@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       
+        <title>Assignment Calculator</title>
+        <meta name="description" content="Assignment Calculator">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+<link rel="stylesheet" href="https://unpkg.com/tachyons@4.5.5/css/tachyons.min.css">
+		
+<title>Assignment Calculator</title>
+<style>
+* {font-family: Arial, Verdana, Helvetica, Calibri, Tahoma, sans-serif; }
+strong {font-size: 25pt; color: #f0f0f0;}
+th {text-align: left; background-color: #311B92;}
+body {max-width: 800px; margin: auto;}
+.footer {font-size: 8pt;}
+.err {
+	color: blue;
+}
+.label {
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: right;
+	vertical-align: top;
+}
+</style>
+</head>  
+
+    <body>
+<main id="app" class="ph0 mh0 measure-wide f4 lh-copy center">
+
+<a href="/" tabindex="1" title="Keyano College home page"><img src="https://www.keyano.ca/en/images/structure/logo.svg" border="0" alt="Keyano College"/></a>
+<table border="0" width="100%"><tr><th style="font-size:40pt; font-weight:bold; text-align:center; color:#F0F0F0">Assignment Calculator</th></tr>
+<tr><td>
+This calculator will help you break down your assignment or project into manageable steps and guide you to useful services and tools from the Keyano Library.  
+</td></tr>
+
+
+<table align="center" border="0">
+<tr>
+<td align="center" colspan="2">
+</td>
+</tr>
+
+<p>
+<p>
+<style type="text/css"><!--
+#show_table{
+display:none;
+}
+-->
+</style>
+<script type="text/javascript">
+<!--
+var pctArray = new Array(
+	0.04,  //step 1
+	0.06,  //step 2
+	0.04,  //step 3
+	0.10,  //step 4
+	0.10,  //step 5
+	0.04,  //step 6
+	0.20,  //step 7
+	0.10,  //step 8
+	0.10,  //step 9
+	0.10,  //step 10
+	0.10,  //step 11
+	0.02   //step 12
+	);
+
+var months = new Array(	"January","February","March","April","May","June","July",
+	"August","September","October","November","December");
+
+function getMyDays( mydate )
+{
+	var mon = mydate.getMonth();
+	return months[mon] + " " + mydate.getDate() + ", " + mydate.getFullYear();
+}
+
+function getStep( vDate, vDays, vNum )
+{	
+	var pct_step=0;
+	for ( var i=0; i<vNum; i++ )
+	{
+		pct_step += pctArray[i]
+	}
+	var step = new Date(vDate.getTime() + Math.round(vDays*pct_step)*86400000);
+	return step;
+}
+
+function showMe()
+{
+	var totalDays=0;
+	var st1 = form1.start_date.value;  
+	var st2 = form1.end_date.value;  
+	
+	if ( st1=="" || st2=="" )
+	{
+		alert("Invalid date! Please try again.");
+		return;
+	}
+
+	var beginDate = new Date(st1);
+	var endDate = new Date(st2);
+	totalDays = Math.ceil((endDate.getTime() - beginDate.getTime()) / 86400000);  
+
+	for ( var i=1; i<=pctArray.length; i++ )
+	{
+		document.getElementById("stepDay"+i).innerHTML="Done by " + "<b>"+getMyDays(getStep(beginDate,totalDays,i))+"</b>";
+	}
+	
+	document.getElementById("show_table").style.display="block";
+}
+//-->
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script></p>
+
+
+
+<form action="" id="form1" method="post" name="form1">
+<tr>
+<td valign="top" align="right"><div><b>Date you will start:</b>
+<td>
+<input id="start_date"  name="start_date" onclick="new Calendar(null, null, 1).show(this);" type="date" /></div>
+<tr>
+<td valign="top" align="right"><b>Date you will end:</b> 
+<td>
+ <input id="end_date" name="end_date" onclick="new Calendar(null, null, 1).show(this);" type="date" /></div> <p>
+<input id="button" name="button" onclick="javascript:showMe();" type="button" value="Calculate Schedule!" />&nbsp;</form>
+
+</aside>
+  <br /><br />
+
+
+
+<div id="show_table">
+<table border="1">
+	<tbody>
+		<tr>
+			<td width="100">Step One</td>
+			<td width="150">
+			<div id="stepDay1">&nbsp;</div>
+			</td>
+			<td width="400">Understand Your Assignment
+			<ul>
+				<li>Read your assignment carefully before you start to ensure you understand the requirements.</li>
+				<li>Note any specific deadlines for submitting your topic, sources, outlines, or drafts.</li>
+				<li>Note the citation style your professor requires.
+				<ul>
+					<li>Consider <a href="https://library.seu.edu/zotero">Zotero</a> if you have many citations.</li>
+				</ul>
+				</li>
+				<li>Consult with your instructor if you have questions in these areas.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Two</td>
+			<td>
+			<div id="stepDay2">&nbsp;</div>
+			</td>
+			<td>Define Your Topic
+			<ul>
+				<li>View&nbsp;&quot;<a href="https://youtu.be/lrT4U8Nq9OQ" target="_blank">Taming Your Research Topic</a>&quot;</li>
+				<li>View &quot;<a href="https://youtu.be/9nOe26xY1zM" target="_blank">Project Information Literacy</a>&quot;</li>
+				<li>Write down your research question or topic.</li>
+				<li>Note keywords and related terms that can be used as search terms.</li>
+				<li>Consult databases for topic ideas:</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Three</td>
+			<td>
+			<div id="stepDay3">&nbsp;</div>
+			</td>
+			<td>Investigate Your Topic
+			<ul>
+				<li>Refine your topic and ask more specific questions to define your thesis statement.</li>
+				<li>Are you on track?
+				<ul style="list-style-type:circle">
+					<li>Consult with your instructor on the direction of your paper.</li>
+					<li><a href="https://library.seu.edu/home/contact">Contact us for help</a>.</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Four</td>
+			<td>
+			<div id="stepDay4">&nbsp;</div>
+			</td>
+			<td>Retrieve Information on Your Topic
+			<ul>
+				<li>View &quot;<a href="https://youtu.be/xZfS5wEHBo8" target="_blank">Finding Scholarly Articles</a>&quot;</li>
+				<li>Plan your search strategy.
+				<ul style="list-style-type:circle">
+					<li><a href="https://library.seu.edu/asc" target="_blank">Academic Search Complete </a>is a great place to begin&nbsp;your research</li>
+					<li><a href="https://library.seu.edu/onefile" target="_blank">Academic OneFile (Gale)</a> Use &ldquo;Topic Finder&rdquo; to discover new search terms related to your topic.</li>
+				</ul>
+				</li>
+				<li>Narrow your results by searching a database directly. <a href="https://library.seu.edu/az.php" target="_blank">A-Z List.</a></li>
+				<li>Search for <a href="https://seu.on.worldcat.org/discovery" target="_blank">Books and more in the library catalog</a>.</li>
+				<li>Are you on track?
+				<ul style="list-style-type:circle">
+					<li>Consult with your instructor on the direction of your paper.</li>
+					<li><a href="https://library.seu.edu/home/contact">Contact us for help</a>.</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Five</td>
+			<td>
+			<div id="stepDay5">&nbsp;</div>
+			</td>
+			<td>Read and Evaluate Information
+			<ul>
+				<li>Keep track of your sources and record the citation information as you go. You will need this information to complete your bibliography, reference or works cited page.</li>
+				<li>Evaluate the gathered information for your research:
+				<ul style="list-style-type:circle">
+					<li>Have you found enough information on your topic?</li>
+					<li>Does the information support your thesis?</li>
+					<li>Have you answered the questions: What, Why, Where, When, How?</li>
+				</ul>
+				</li>
+				<li>Are you on track?
+				<ul style="list-style-type:circle">
+					<li>Consult with your instructor on the direction of your paper.</li>
+					<li><a href="https://library.seu.edu/home/contact">Contact us for help</a>.</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Six</td>
+			<td>
+			<div id="stepDay6">&nbsp;</div>
+			</td>
+			<td>Create Your Outline
+			<ul>
+				<li>Organize your ideas.</li>
+				<li>Organize your notes.</li>
+				<li>Outline the format of your paper.</li>
+				<li>Seek assistance with the writing process from <a href="https://library.seu.edu/seuace">ACE</a></li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Seven</td>
+			<td>
+			<div id="stepDay7">&nbsp;</div>
+			</td>
+			<td>Write the First Draft</td>
+		</tr>
+		<tr>
+			<td>Step Eight</td>
+			<td>
+			<div id="stepDay8">&nbsp;</div>
+			</td>
+			<td>Conduct Additional Research as Necessary
+			<ul>
+				<li>Reread your assignment.</li>
+				<li>Use <a href="https://myfire.seu.edu/d2l/common/dialogs/quickLink/quickLink.d2l?ou=6606&amp;type=lti&amp;rcode=seu-44394&amp;srcou=6606" target="_blank">SmartThinking</a> found within <a href="https://myfire.seu.edu/d2l/home" target="_blank">Brightspace</a>.</li>
+				<li>View &quot;<a href="https://youtu.be/UsFcU1PH_8E" target="_blank">How to Avoid Plagiarism</a>&quot;</li>
+				<li>Keep looking for more sources that support your thesis or argument.</li>
+				<li>Are you on track?
+				<ul style="list-style-type:circle">
+					<li>Consult with your instructor on the direction of your paper.</li>
+					<li><a href="https://library.seu.edu/home/contact">Contact us for help</a>.</li>
+				</ul>
+				</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Nine</td>
+			<td>
+			<div id="stepDay9">&nbsp;</div>
+			</td>
+			<td>Revise and Rewrite: Second Draft
+			<ul style="list-style-type:circle">
+				<li>Complete bibliography, reference, or works cited page.</li>
+				<li><a href="https://library.seu.edu/zotero">Zotero</a> can do this automatically.</li>
+				<li>View the&nbsp;<a href="https://library.seu.edu/citations" target="_blank">&quot;Citation Guide&quot;</a>.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Ten</td>
+			<td>
+			<div id="stepDay10">&nbsp;</div>
+			</td>
+			<td>Proofread Your Paper
+			<ul style="list-style-type:circle">
+				<li>Look for spelling and grammatical errors.</li>
+				<li>Use the&nbsp;<a href="https://plagiarismcheckerx.com/" target="_blank">Plagiarism Checker</a>.</li>
+				<li>Read your paper out loud.&nbsp;</li>
+				<li>Does your paper fulfill the assignment requirements?</li>
+				<li>Final review.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Eleven</td>
+			<td>
+			<div id="stepDay11">&nbsp;</div>
+			</td>
+			<td>Final Draft
+			<ul style="list-style-type:circle">
+				<li>Write the final draft of your paper.</li>
+				<li>Save a copy in your Google Drive.</li>
+			</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Step Twelve</td>
+			<td>
+			<div id="stepDay12">&nbsp;</div>
+			</td>
+			<td>Assignment Due Date
+			<ul style="list-style-type:circle">
+				<li>Submit your paper!</li>
+			</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+		   </div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+							</div>
+        </div>
+    </div>
+				
+</div>
+				<div class="row s-lg-row">
+    <div id="s-lg-col-127" class="col-md-12">
+        <div class="s-lg-col-boxes">
+        </div>
+    </div>
+				
+</div>    
+
+
+
+<p align='right'>
+<a href="https://www.keyano.ca/en/student-services/library.aspx"><img border=0 src="https://www.keyano.ca/en/resourcesGeneral/logos/logo-library.png" alt="Brought to you by Keyano College Library" /></a><br />
+</p>
+<center>
+<hr noshade>
+<p class="footer">
+Based on the <a href="https://www.lib.umn.edu/help/calculator/">Assignment Calculator</a> from the <a href="https://www.lib.umn.edu">University of Minnesota Libraries</a>.
+
+
+
